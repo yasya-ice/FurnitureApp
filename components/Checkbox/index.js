@@ -15,4 +15,4 @@ const Checkbox = ({checked, onCheck}) => {
     )
 }
 
-export default Checkbox
+export default Checkbox;

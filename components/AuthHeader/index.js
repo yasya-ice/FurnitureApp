@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 import { Image, Pressable, Text, View } from "react-native";
 import { styles } from './styles';
@@ -17,4 +18,9 @@ const AuthHeader = ({title, onBackPress}) => {
     )
 }
 
-export default AuthHeader
+AuthHeader.propTypes = {
+  title: PropTypes.string.isRequired,
+  onBackPress: PropTypes.func.isRequired,
+};
+
+export default AuthHeader;

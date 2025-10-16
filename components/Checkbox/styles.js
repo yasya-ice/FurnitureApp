@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
 
     innerContainer: {
-        backgroundColor: colors.grey,
+        backgroundColor: colors.gray,
         width: '100%',
         height: '100%',
         justifyContent: 'center',
@@ -27,4 +27,4 @@ export const styles = StyleSheet.create({
  }
 )
 
-export default styles
+export default styles;
