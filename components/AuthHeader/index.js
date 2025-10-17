@@ -23,4 +23,4 @@ AuthHeader.propTypes = {
   onBackPress: PropTypes.func.isRequired,
 };
 
-export default AuthHeader;
+export default React.memo(AuthHeader);

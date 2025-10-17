@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 
     container: {
-        padding: 0,
+        padding: 24,
     },
 
     agreeRow: {
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
  }
 )
 
-export default styles
+export default styles;
