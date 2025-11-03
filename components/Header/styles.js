@@ -1,0 +1,24 @@
+import { colors } from "@/constants/colors";
+import { StyleSheet } from "react-native";
+
+export const styles = StyleSheet.create({
+    
+    container: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+
+    title: {
+        color: colors.black,
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+
+    icon: {
+        width: 24,
+        height: 24
+    }
+})
+
+export default styles; 
