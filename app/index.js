@@ -9,6 +9,7 @@ import Signup from './(tabs)/SignUp'
 import Splash from './(tabs)/Splash'
 import Favorites from './Favorites'
 import Home from './Home'
+import ProductDetails from './ProductDetails'
 import Profile from './Profile'
 
 const Stack = createNativeStackNavigator()
@@ -69,7 +70,8 @@ const App = () => {
             >
                 {isSignedin ? (
                     <>
-                        <Stack.Screen name="Tabs" component={Tabs} />
+                        <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
+                        <Stack.Screen name="ProductDetails" component={ProductDetails} options={{ headerShown: false }} />
                     </>
                 ) : (
                     <>

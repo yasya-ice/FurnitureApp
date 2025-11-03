@@ -8,7 +8,7 @@ import { categories } from "../../data/categories";
 import { products } from "../../data/products";
 import { styles } from "./styles";
 
-const Home = () => {
+const Home = ({navigation}) => {
 
     const [selectedCategory, setSelectedCategory] = useState()
     const [keyword, setKeyword] = useState()
@@ -42,9 +42,11 @@ const Home = () => {
     }
     
     const renderProductItem = ({item}) => {
-        console.log('item=>', item)
+        const onProductPress = (product) => {
+            navigation.navigate('ProductDetails', {product})
+        }
         return (
-            <ProductHomeItem {...item}/>
+            <ProductHomeItem onPress={() => onProductPress(item)} {...item}/>
         )
     }
 
