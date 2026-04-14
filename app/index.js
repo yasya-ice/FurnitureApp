@@ -7,10 +7,12 @@ import { colors } from '../constants/colors'
 import SignIn from './(tabs)/SignIn'
 import Signup from './(tabs)/SignUp'
 import Splash from './(tabs)/Splash'
+import CreateListing from './CreateListing'
 import Favorites from './Favorites'
 import Home from './Home'
 import ProductDetails from './ProductDetails'
 import Profile from './Profile'
+import Settings from './Settings'
 
 const Stack = createNativeStackNavigator()
 
@@ -18,6 +20,16 @@ const Tab = createBottomTabNavigator()
 
 const isSignedin = true
 
+const ProfileStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
+            <Stack.Screen name="Settings" component={Settings} options={{headerShown: false}} />
+            <Stack.Screen name="CreateListing" component={CreateListing} options={{headerShown: false}} />
+        </Stack.Navigator>
+    )
+}
+console.log('CreateListing:', CreateListing);
 const Tabs = () => {
     return (
         <Tab.Navigator 
@@ -47,7 +59,7 @@ const Tabs = () => {
             >
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Favorites" component={Favorites} />
-            <Tab.Screen name='Profile' component={Profile} />
+            <Tab.Screen name='Profile' component={ProfileStack} />
         </Tab.Navigator>
     )
 }

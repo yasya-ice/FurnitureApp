@@ -1,16 +1,55 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View } from "react-native"; // <-- додано Text
 import { SafeAreaView } from "react-native-safe-area-context";
+import Button from "../../components/Button";
+import Header from "../../components/Header";
+import ListItem from "../../components/ListItem";
 import { styles } from "./styles";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
+    const num = 10;
+
+    const onLogout = () => {
+        console.log('Logout is clicked');
+    };
+
+    const onSettingsPress = () => {
+        navigation.navigate('Settings');
+    };
+
+    const onNewListingPress = () => {
+        navigation.navigate('CreateListing');
+    };
+
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
             <View style={styles.container}>
-                <Text>Profile</Text>
+                <View style={styles.content}>
+                    <Header title="Profile" showLogout onLogout={onLogout} />
+                    <Text style={styles.name}>User name</Text>
+                    <Text style={styles.email}>User email</Text>
+
+                    <ListItem 
+                        title="My Listings" 
+                        subtitle={`Already have ${num} listings`} 
+                    />
+                    
+                    <View style={{ height: 20 }} /> 
+
+                    <ListItem 
+                        title="Settings" 
+                        subtitle="Account, FAQ, Contact" 
+                        onPress={onSettingsPress} 
+                    />
+                </View>
+
+                <Button 
+                    onPress={onNewListingPress} 
+                    title="Add New Listing" 
+                />
             </View>
         </SafeAreaView>
-    )
-}
+    );
+};
 
-export default React.memo(Profile)
+export default React.memo(Profile);
